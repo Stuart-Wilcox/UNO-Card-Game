@@ -55,10 +55,12 @@ bool uno_player::play_card(Stack<uno_card> &b, Queue<uno_card> &d) {
 	if (d.isEmpty()) {
 		Bag<uno_card> bag(b.getSize());
 		uno_card top = b.pop();
-		for (unsigned short int i(0); i < b.getSize();i++) {
+		unsigned int sz1(b.getSize());
+		for (unsigned short int i(0); i < sz1;i++) {
 			bag.add(b.pop());
 		}
-		for (unsigned short int i(0); i < bag.currentSize(); i++) {
+		unsigned int sz2(bag.currentSize());
+		for (unsigned short int i(0); i < sz2; i++) {
 			d.enqueue(bag.getOne());
 		}
 		b.push(top);
@@ -73,7 +75,7 @@ bool uno_player::play_card(Stack<uno_card> &b, Queue<uno_card> &d) {
 			if (_hand.getLength() == 1) {
 				cout << _name << " yelled UNO!\n";
 			}
-			cout << "They have " << _hand.getLength() << " cards left.\n\n";
+			//cout << "They have " << _hand.getLength() << " cards left.\n\n";
 			return (_hand.getLength() == 0);
 		}
 	}
@@ -87,7 +89,7 @@ bool uno_player::play_card(Stack<uno_card> &b, Queue<uno_card> &d) {
 			if (_hand.getLength() == 1) {
 				cout << _name << " yelled UNO!\n";
 			}
-			cout << "They have " << _hand.getLength() << " cards left.\n\n";
+			//cout << "They have " << _hand.getLength() << " cards left.\n\n";
 			return (_hand.getLength() == 0);
 		}
 	}
@@ -95,7 +97,7 @@ bool uno_player::play_card(Stack<uno_card> &b, Queue<uno_card> &d) {
 
 	cout << _name << " did not find a match. They drew a card.\n";
 	_hand.insert(d.dequeue());
-	cout << "They have " << _hand.getLength() << " cards left.\n\n";
+	//cout << "They have " << _hand.getLength() << " cards left.\n\n";
 	return 0;
 	//pick up a card
 

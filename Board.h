@@ -109,9 +109,21 @@ uno_board::uno_board(unsigned short int num_players_, unsigned int num_cards_, u
 	//player[0].set_name("Heng Weng");
 	for (unsigned int i(0); i < _num_players; i++) {
 		string name = "Player";
-		name.push_back(i+49);
+		if (1+i < 10) {
+			name.push_back(i + 49);
+		}
+		else {
+			name.push_back(49);
+			name.push_back(i + 39);
+		}
 		player[i].set_name(name);
-		name.pop_back();
+		if (1+i < 9) {
+			name.pop_back();
+		}
+		else {
+			name.pop_back();
+			name.pop_back();
+		}
 	}
 
 	uno_card temp = _face_down_cards.dequeue();

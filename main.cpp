@@ -18,14 +18,14 @@ int main() {
 	cout << "\nPlease enter the number of players: ";
 	int num_players(0);
 	cin >> num_players;
-	while (num_players < 2 || num_players>9) {
-		cout << "\nMust have between 2 and 9 players. Please enter number of players: ";
+	while (num_players < 2 || num_players>19) {
+		cout << "\nMust have between 2 and 19 players. Please enter number of players: ";
 		cin >> num_players;
 	}
 	cout << "\nPlease enter the number of cards each player starts with: ";
 	int num_cards(0);
 	cin >> num_cards;
-	while (num_cards < 2 || num_cards>10) {
+	while (num_cards < 2 || num_cards>12) {
 		cout << "\nMust have between 2 and 10 cards. Please enter number of cards each player starts with: ";
 		cin >> num_cards;
 	}
@@ -33,8 +33,8 @@ int main() {
 	int max_denom(0);
 	cin >> max_denom;
 	cout << endl;
-	while (max_denom < 5 || max_denom >15 || max_denom * 8 < num_cards*num_players+2) {
-		cout << "Must have a denomination between 5 and 15 and at least enough cards to deal to all players.\n"
+	while (max_denom < 5 || max_denom >25 || max_denom * 8 < num_cards*num_players+2) {
+		cout << "Must have a denomination between 5 and 25 and at least enough cards to deal to all players.\n"
 			"Please enter the maximum denomination of cards: ";
 		cin >> max_denom;
 
